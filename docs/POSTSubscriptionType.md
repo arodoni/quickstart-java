@@ -1,0 +1,38 @@
+
+# POSTSubscriptionType
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**cpqBundleJsonIdQT** | **String** |  |  [optional]
+**opportunityCloseDateQT** | **String** |  |  [optional]
+**opportunityNameQT** | **String** |  |  [optional]
+**quoteBusinessTypeQT** | **String** |  |  [optional]
+**quoteNumberQT** | **String** |  |  [optional]
+**quoteTypeQT** | **String** |  |  [optional]
+**accountKey** | **String** | Customer account number or ID  | 
+**applyCreditBalance** | **Boolean** | Applies a credit balance to an invoice.  If the value is &#x60;true&#x60;, the credit balance is applied to the invoice. If the value is &#x60;false&#x60;, no action is taken.  **Prerequisite:** &#x60;invoice&#x60; must be &#x60;true&#x60;.   **Note:** If you are using the field &#x60;invoiceCollect&#x60; rather than the field invoice, the &#x60;invoiceCollect&#x60; value must be &#x60;true&#x60;.  To view the credit balance adjustment, retrieve the details of the invoice using the [Get Invoices](https://knowledgecenter.zuora.com/DC_Developers/REST_API/B_REST_API_reference/Transactions/GET_invoices) method.  |  [optional]
+**autoRenew** | **Boolean** | If &#x60;true&#x60;, this subscription automatically renews at the end of the subscription term. Default is &#x60;false&#x60;.  |  [optional]
+**collect** | **Boolean** | Collects an automatic payment for a subscription. The collection generated in this operation is only for this subscription, not for the entire customer account. If the value is &#x60;true&#x60;, the automatic payment is collected. If the value is &#x60;false&#x60;, no action is taken.  The default value is &#x60;true&#x60;.  **Prerequisite:** The invoice field must be &#x60;true&#x60;.   **Note:** This field is in Zuora REST API version control. Supported minor versions are 196.0 or later. To use this field in the method, you must set the &#x60;zuora-version&#x60; field to the minor version number in the request header. See [Zuora REST API Versions](https://knowledgecenter.zuora.com/DC_Developers/REST_API/A_REST_basics#Zuora_REST_API_Versions) for more information.  |  [optional]
+**contractEffectiveDate** | [**LocalDate**](LocalDate.md) | Effective contract date for this subscription, as yyyy-mm-dd  | 
+**customFieldC** | **String** | Any custom fields defined for this object.  |  [optional]
+**customerAcceptanceDate** | [**LocalDate**](LocalDate.md) | The date on which the services or products within a subscription have been accepted by the customer, as yyyy-mm-dd.  Default value is dependent on the value of other fields. See **Notes** section for more details.  |  [optional]
+**initialTerm** | **Long** | The length of the period for the first subscription term. Default is &#x60;0&#x60;. If &#x60;termType&#x60; is &#x60;TERMED&#x60;, then this field is required, and the value must be greater than &#x60;0&#x60;. If &#x60;termType&#x60; is &#x60;EVERGREEN&#x60;, this field is ignored.  |  [optional]
+**initialTermPeriodType** | **String** | The period type for the first subscription term.  This field is used with the &#x60;InitialTerm&#x60; field to specify the initial subscription term.  Values are:  * &#x60;Month&#x60; (default) * &#x60;Year&#x60; * &#x60;Day&#x60; * &#x60;Week&#x60;  |  [optional]
+**invoice** | **Boolean** | Creates an invoice for a subscription. The invoice generated in this operation is only for this subscription, not for the entire customer account.  If the value is &#x60;true&#x60;, an invoice is created. If the value is &#x60;false&#x60;, no action is taken. The default value is &#x60;true&#x60;.   This field is in Zuora REST API version control. Supported minor versions are &#x60;196.0&#x60; or later. To use this field in the method, you must set the zuora-version parameter to the minor version number in the request header. See [Zuora REST API Versions](https://knowledgecenter.zuora.com/DC_Developers/REST_API/A_REST_basics#Zuora_REST_API_Versions) for more information.  |  [optional]
+**invoiceCollect** | **Boolean** | **Note:** This field has been replaced by the invoice field and the collect field. invoiceCollect is available only for backward compatibility.  If &#x60;true&#x60; (default), an invoice is generated and payment collected automatically during the subscription process. If &#x60;false&#x60;, no invoicing or payment takes place. The invoice generated in this operation is only for this subscription, not for the entire customer account.  This field is in Zuora REST API version control. Supported minor versions are &#x60;186.0&#x60;, &#x60;187.0&#x60;, &#x60;188.0&#x60;, &#x60;189.0&#x60;, and &#x60;196.0&#x60;. See [Zuora REST API Versions](https://knowledgecenter.zuora.com/DC_Developers/REST_API/A_REST_basics#Zuora_REST_API_Versions) for more information.  |  [optional]
+**invoiceOwnerAccountKey** | **String** | Invoice owner account number or ID.  **Note:** This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).  |  [optional]
+**invoiceSeparately** | **Boolean** | Separates a single subscription from other subscriptions and invoices the charge independently.   If the value is &#x60;true&#x60;, the subscription is billed separately from other subscriptions. If the value is &#x60;false&#x60;, the subscription is included with other subscriptions in the account invoice.  The default value is &#x60;false&#x60;.  Prerequisite: The default subscription setting Enable Subscriptions to be Invoiced Separately must be set to Yes.  |  [optional]
+**invoiceTargetDate** | [**LocalDate**](LocalDate.md) | Date through which to calculate charges if an invoice is generated, as yyyy-mm-dd. Default is current date.  |  [optional]
+**notes** | **String** | String of up to 500 characters.  |  [optional]
+**renewalSetting** | **String** | Specifies whether a termed subscription will remain termed or change to evergreen when it is renewed.  Values:  * &#x60;RENEW_WITH_SPECIFIC_TERM&#x60; (default) * &#x60;RENEW_TO_EVERGREEN&#x60;  |  [optional]
+**renewalTerm** | **Long** | The length of the period for the subscription renewal term. Default is &#x60;0&#x60;.  |  [optional]
+**renewalTermPeriodType** | **String** | The period type for the subscription renewal term.  This field is used with the &#x60;renewalTerm&#x60; field to specify the subscription renewal term.  Values are:  * &#x60;Month&#x60; (default) * &#x60;Year&#x60; * &#x60;Day&#x60; * &#x60;Week&#x60;  |  [optional]
+**serviceActivationDate** | [**LocalDate**](LocalDate.md) | The date on which the services or products within a subscription have been activated and access has been provided to the customer, as yyyy-mm-dd.  Default value is dependent on the value of other fields. See **Notes** section for more details.  |  [optional]
+**subscribeToRatePlans** | [**List&lt;POSTSrpCreateType&gt;**](POSTSrpCreateType.md) | Container for one or more rate plans for this subscription.  | 
+**subscriptionNumber** | **String** | Subscription Number. The value can be up to 1000 characters.  If you do not specify a subscription number when creating a subscription, Zuora will generate a subscription number automatically.  If the account is created successfully, the subscription number is returned in the &#x60;subscriptionNumber&#x60; response field.  |  [optional]
+**termStartDate** | [**LocalDate**](LocalDate.md) | The date on which the subscription term begins, as yyyy-mm-dd. If this is a renewal subscription, this date is different from the subscription start date.  |  [optional]
+**termType** | **String** | Possible values are: &#x60;TERMED&#x60;, &#x60;EVERGREEN&#x60;.  | 
+
+
+
