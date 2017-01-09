@@ -52,7 +52,11 @@ Follow these steps to generate the QuickStart project and run thru the use cases
 
 1. Download or clone the project on your local drive.
 
-2. Change directory to ZuoraQuickstart. You should see the pom.xml file in the folder.
+2. From the root folder of the project, change directory to ZuoraQuickstart. You should see the pom.xml file in the folder:
+
+   ```shell
+   cd ZuoraQuickStart
+   ```
 
 3. From the directory where pom.xml resides, execute the following command to install the API client library to your local Maven repository:
 
