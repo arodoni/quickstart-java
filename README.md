@@ -1,111 +1,71 @@
-# Zuora Quickstart
+# Zuora REST API Quick Start for Java
 
 ## Overview
+This sample code is to help you quickly integrate with Zuora through the use of the Zuora REST API and Java. For additional information on the Zuora API, visit the [Zuora Developer Center](https://knowledgecenter.zuora.com/DC_Developers/REST_API/B_REST_API_reference).
 
-Thank you for interest in the Zuora quickstart.
+The sample code is provided “AS IS”, for demonstration purposes only. Zuora does not guarantee or make any representations regarding the use, results of use, accuracy, security, timeliness, or completeness of any data or information relating to the sample code. You, the customer, are responsible for making sure that your implementation is functional and secure.
 
-This quickstart is created to help you quickly integrate with Zuora through the use of the Zuora
-REST APIs, without being burdened by the underlying HTTP mechanics.  For additional information on 
-the Zuora APIs please visit the 
-[Zuora Knowledgecenter](https://knowledgecenter.zuora.com/DC_Developers/REST_API/B_REST_API_reference)
+Go to [Zuora Community](http://community.zuora.com) to report issues or discuss these samples with your peers.
 
-The sample code demonstrates how to invoke the REST resources via a Swagger.io generated framework, to
-implement 5 use cases:
-* Retrieve the Zuora product catalog
-* Create an account and subscription
-* Retrieve a subscription
-* Upgrade a subscription
-* Cancel a subscription 
+The sample code demonstrates how to invoke the REST resources to
+implement the following use cases:
 
-The quickstart was generated using Swagger.io, and utilizes a single class to provide an example of
-how to interact with the Zuora REST API: zuora.com.rest.ZuoraQuickstart.ZuoraController.java
+1. Retrieve the Zuora product catalog
 
-### Zuora Test Drive
+2. Create an account and a subscription
 
-To complete this tutorial, you'll need a Zuora Test Drive tenant.
+3. Upgrade a subscription
 
-The Test Drive tenant comes with seed data, such as a sample product catalog, which will be used in the Exercises.
-Go to [Zuora Test Drive](https://www.zuora.com/resource/zuora-test-drive/) and sign up for a tenant.
+4. Cancel a subscription 
 
-### Maven
-
-Maven is the build manager utilized by Swagger.  Maven manages the projects build utilizing the 
-pom.xml file.  This version of the quickstart will download the following libraries:
-* swagger-annotations-1.5.9.jar
-* okhttp:-2.7.5.jar
-* okio-1.6.0.jar
-* logging-interceptor-2.7.5.jar
-* gson-2.6.2.jar
-* joda-time-2.9.3.jar
-* junit-4.12.jar
-* hamcrest-core-1.3.jar
+The API calls used in this example are shown in cURL in [Zuora Developer Quick Start](https://www.zuora.com/developer/quick-start/).
 
 ## Requirements
 
-* Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
-* Zuora enforces the use of TLS 1.1 and thus this project has been built using Java 1.8, and Java 1.8 or higher is recommended
+To build and execute the sample code, you need the following:
 
-## Installation
+* Zuora Test Drive Tenant
 
-### Maven Local Repository
+  The Test Drive tenant comes with seed data, such as a sample product catalog, which will be used in the sample code. Go to [Zuora Test Drive](https://www.zuora.com/resource/zuora-test-drive/) and sign up for a trial tenant.
 
-The Zuora library has been condensed into a single jar file:
-* ZuoraRestService-1.0.jar
-This file is located in Git at archive\zuora\com\rest\ZuoraRestService\1.0.  Maven is used to create a local repository to hold
-this file so the libraries are available at compile and runtime.  To create the local repository:
-* Downloda/clone the project on your local drive
-* Modify the pom.xml file to point to your archive directory.  For example replace:
-```xml
-  <repository>
-    <id>Zuora</id>
-    <url>file://<YOUR LOCAL DIRECTORY></url>
-  </repository>
-```
+* [Maven](https://maven.apache.org/)
 
-  With something like:
-```xml
-  <repository>
-    <id>Zuora</id>
-    <url>file://C:/zuora/archive</url>
-  </repository>
-```
+  Maven is used to build the QuickStart project in the local repository.
 
-### Project Generation and Execution
-To install the API client library to your local Maven repository, from the directory that stores the pom.xml execute:
+* Java 1.8 or later
 
-```shell
-mvn install
-```
+  Zuora enforces the use of TLS 1.1, and thus this project was built using Java 1.8.
 
-To test the generated jar file, execute:
+## Installation and Execution
 
-```shell
-mvn exec:java -Dexec.args="TenantUID TenantPWD"
-```
+The QuickStart project contains the following major components:
 
-The arguments passed are the user ID and password for your Zuora tenant.  These can also be set inside of the
-ZuoraController.java file at the lines that read:
-```java
-	//holds the tenant username (also known as apiAccessKeyId) to connect to the Zuora service
-	static String uid = null;
-	//holds the tenant password (also known as the apiSecretAccessKey) to connect to the Zuora service
-	static String pwd = null;
-```
+* ZuoraRestService-1.0.jar 
 
-Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
+  This file contains the the Zuora REST client libraries and is located in archive\zuora\com\rest\ZuoraRestService\1.0. 
 
-## Recommendation
+* zuora.com.rest.ZuoraQuickstart.ZuoraController.java
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issue.
+  This is the class with the QuickStart sample code that uses the Zuora REST API.
+
+Follow these steps to generate the QuickStart project and run thru the use cases:
+
+1. Download or clone the project on your local drive.
+
+2. Change directory to ZuoraQuickstart. You should see the pom.xml file in the folder.
+
+3. From the directory where pom.xml resides, execute the following command to install the API client library to your local Maven repository:
+
+   ```shell
+   mvn install
+   ```
+
+4. Execute the QuickStart. The arguments passed are the user ID and password for your Zuora Test Drive tenant.
+   
+   ```shell
+   mvn exec:java -Dexec.args="TenantUID TenantPWD"
+   ```
 
 ## Author
 
 docs@zuora.com
-
-## License
-
-You are free to use this quickstart.  However, Zuora does not guarantee or make any representations 
-regarding the use, results of use, accuracy, security, timeliness, or completeness of any data or 
-information relating to the sample code. You, the customer, are responsible for making sure that 
-your implementation is secure and functional.
-
