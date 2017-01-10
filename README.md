@@ -1,6 +1,7 @@
 # Zuora REST API Quick Start for Java
 
 ## Overview
+
 This sample code is to help you quickly integrate with Zuora through the use of the Zuora REST API and Java. For additional information on the Zuora API, visit the [Zuora Developer Center](https://knowledgecenter.zuora.com/DC_Developers/REST_API/B_REST_API_reference).
 
 The sample code is provided “AS IS”, for demonstration purposes only. Zuora does not guarantee or make any representations regarding the use, results of use, accuracy, security, timeliness, or completeness of any data or information relating to the sample code. You, the customer, are responsible for making sure that your implementation is functional and secure.
